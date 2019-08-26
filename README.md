@@ -83,7 +83,9 @@ app下的build.gradle添加：
               @Override
               protected void onDestroy() {
                      super.onDestroy();
-                     magicVideoView.destory();
+                     if (magicVideoView!=null){
+                             magicVideoView.destory();
+                     }
               }
                 
 四.混淆
