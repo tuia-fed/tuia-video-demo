@@ -15,6 +15,8 @@ import com.qs.magic.sdk.view.MagicVideoView;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private MagicVideoView magicVideoView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MagicVideoView magicVideoView =new MagicVideoView(getApplication(),
+                magicVideoView =new MagicVideoView(getApplication(),
                         "","","2ZjLbhEBCFAzBbihEtxLEq25mXKw","300789");
                 magicVideoView.init(new MagicVideoListener() {
 
@@ -53,5 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (magicVideoView!=null){
+            magicVideoView.destory();
+        }
     }
 }
