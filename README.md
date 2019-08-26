@@ -32,7 +32,8 @@ app下的build.gradle添加：
      }
 
 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
-   <uses-permission android:name="android.permission.INTERNET"/>
+
+        <uses-permission android:name="android.permission.INTERNET"/>
    
 三.使用(参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId(媒体自己的用户id))
 
