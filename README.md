@@ -27,7 +27,7 @@ Android对接领奖：
                  }
           }
 
-app下的build.gradle添加：
+app下的build.gradle添加：(最小支持minSdkVersion 15)
 
     dependencies {
         implementation ('com.tm:tm:1.0.0.0'){
