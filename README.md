@@ -67,6 +67,17 @@ app下的build.gradle添加：
                     }
                 });
                 
+                onMagicRewarded msg->json字符串
+                {"finishType":1,"orderId":"168408070629","userId":"1233","timestamp":"1566791113031","prizeFlag":"ecb-video-sdk","appKey":"4W8ReCvDm4fy3Fpn52MgPgUWmdfS","sign":"5093659d6bf802d1a407df81d6aab9f9","score":null,"reason":"-1","url":null}
+                
+                userId String 用户 id，用户在媒体的唯一识别信息，来源于活动链接中的&userId=xxx，由媒体拼接提供
+                timestamp1 Number 时间戳
+                prizeFlag1 2 String 请求上报的奖励在对接方媒体系统内的奖励标识，用于标识具体的奖励类型，由媒体提供
+                orderId1 String 推啊订单号，具有唯一性，幂等由媒体保障
+                appKey1 String 媒体公钥
+                sign1 String 签名
+                score Number 如果是数值类型的奖励，则同时请求充值对应的数值 score，比如积分、金币、倍数等
+                
 四.混淆
 
           -keep class com.qs.magic.sdk.**{ *;}     
