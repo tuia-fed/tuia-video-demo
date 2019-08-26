@@ -37,9 +37,10 @@ app下的build.gradle添加：
    
 三.使用(参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId(媒体自己的用户id))
 
-         MagicVideoView magicVideoView =new MagicVideoView(getApplication(),
-                        "userId","appId","appkey","slotId");
-                magicVideoView.init(new MagicVideoListener() {
+       1.创建MagicVideoView对象
+         MagicVideoView magicVideoView =new MagicVideoView(getApplication(),"userId","appId","appkey","slotId");
+       2.初始化
+              magicVideoView.init(new MagicVideoListener() {
 
                     @Override
                     public void onMagicRequestAd() {
@@ -77,6 +78,13 @@ app下的build.gradle添加：
                 appKey1 String 媒体公钥
                 sign1 String 签名
                 score Number 如果是数值类型的奖励，则同时请求充值对应的数值 score，比如积分、金币、倍数等
+                
+          3.在activity的onDestroy中处理
+              @Override
+              protected void onDestroy() {
+                     super.onDestroy();
+                     magicVideoView.destory();
+              }
                 
 四.混淆
 
