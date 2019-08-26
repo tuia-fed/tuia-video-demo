@@ -1,6 +1,7 @@
 # 接入指南
 一.依赖引入
 项目的build.gradle文件中添加
+
  buildscript {
     repositories {
         google()
@@ -25,10 +26,12 @@ app下的build.gradle添加：
         transitive = true
     }
 }
+
 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
    <uses-permission android:name="android.permission.INTERNET"/>
    
 三.使用(参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId(媒体自己的用户id))
+
   MagicVideoView magicVideoView =new MagicVideoView(getApplication(),
                         "userId","appId","appkey","slotId");
                 magicVideoView.init(new MagicVideoListener() {
@@ -58,7 +61,9 @@ app下的build.gradle添加：
                         Log.d("onMagicRequest","onMagicRewarded"+msg);
                     }
                 });
+                
 四.混淆
 -keep class com.qs.magic.sdk.**{ *;}
+
 五.对接问题
 咨询对应开发或者直接git提交问题
