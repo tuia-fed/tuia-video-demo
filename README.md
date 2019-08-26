@@ -1,4 +1,8 @@
 # 接入指南
+
+服务端对接领奖：https://yun.duiba.com.cn/tuiasdk激励互动开发文档.pdf
+
+Android对接领奖：
 一.依赖引入
 项目的build.gradle文件中添加
        
