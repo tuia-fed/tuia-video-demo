@@ -1,5 +1,4 @@
 # 接入指南
-# 接入指南
 
 服务端对接领奖：https://yun.duiba.com.cn/tuiasdk激励互动开发文档.pdf
 
