@@ -43,6 +43,7 @@ app下的build.gradle添加：(最小支持minSdkVersion 15)
 MagicVideoView magicVideoView = new MagicVideoView(getApplication(),"userId","appId","appkey","slotId");
 ```
 参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId，对应字段释义如下，字段均必填
+
 | 名称 | 类型 | 备注 |
 | :---------------------: | :---------------------: | :----------------------: |
 | appId | Long | 推啊媒体ID，通过TUIA媒体平台注册获得 |
