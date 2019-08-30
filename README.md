@@ -50,6 +50,7 @@ MagicVideoView magicVideoView = new MagicVideoView(getApplication(),"userId","ap
 | appKey | String | 媒体公钥，通过TUIA媒体平台注册获得 |
 | slotId | Long | 广告位ID，通过TUIA媒体平台注册获得 |
 | userId | String | 媒体的用户ID，用于发送对应的奖励 |
+| deviceId | String | 媒体的用户deviceId，用于用户唯一性确认 |
 
 2.初始化，设置媒体监听
 ```
