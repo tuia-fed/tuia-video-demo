@@ -28,7 +28,7 @@
 app下的build.gradle添加：(最小支持minSdkVersion 15)
 ```
     dependencies {
-        implementation ('com.tuia:tm:1.0.0.2'){
+        implementation ('com.tuia:tm:1.0.0.0'){
                 transitive = true
         }
     }
@@ -40,7 +40,7 @@ app下的build.gradle添加：(最小支持minSdkVersion 15)
 #### 三.使用
 1.创建MagicVideoView对象
 ```
-MagicVideoView magicVideoView = new MagicVideoView(getApplication(),"userId","appId","appkey","slotId");
+MagicVideoView magicVideoView = new MagicVideoView(getApplication(),"userId","appId","appkey","slotId","deviceId");
 ```
 参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId，对应字段释义如下，字段均必填 
 
