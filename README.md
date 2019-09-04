@@ -8,7 +8,7 @@
             google()
             jcenter()
             maven { url "https://jitpack.io" }
-            maven { url "https://dl.bintray.com/luozeyu/maven" }
+            maven { url "https://dl.bintray.com/sunjiangrong/maven" }
         }
         dependencies {
             classpath 'com.android.tools.build:gradle:3.4.2'
@@ -20,7 +20,7 @@
             google()
             jcenter()
             maven { url "https://jitpack.io" }
-            maven { url "https://dl.bintray.com/luozeyu/maven" }
+            maven { url "https://dl.bintray.com/sunjiangrong/maven" }
         }
     }
 ```
@@ -28,7 +28,7 @@
 app下的build.gradle添加：(最小支持minSdkVersion 15)
 ```
     dependencies {
-        implementation ('com.tuia:tm:1.0.0.0'){
+        implementation ('com.tuia:tm:1.0.0.0-release'){
                 transitive = true
         }
     }
@@ -40,7 +40,38 @@ app下的build.gradle添加：(最小支持minSdkVersion 15)
 #### 三.使用
 1.创建MagicVideoView对象
 ```
-MagicVideoView magicVideoView = new MagicVideoView(getApplication(),"userId","appId","appkey","slotId","deviceId");
+
+  MagicVideoView magicVideoView =new MagicVideoView(MagicApp.getApp(),
+                "userId","appId","appkey","slotId",
+                ”deviceId“,new MagicVideoListener() {
+
+            @Override
+            public void onMagicRequestAd() {
+                Log.d("onMagicRequest","onMagicRequestRewardVideo");
+            }
+
+            @Override
+            public void onMagicAdSuccessed() {
+                Log.d("onMagicRequest","onMagicAdSuccessed");
+            }
+
+            @Override
+            public void onMagicAdEmpty() {
+                Log.d("onMagicRequest","onMagicAdEmpty");
+            }
+
+            @Override
+            public void onMagicAdFailed(Response<String> response) {
+                Log.d("onMagicRequest","onMagicAdFailed"+response.body());
+            }
+
+            @Override
+            public void onMagicRewarded(String msg) {
+                Log.d("onMagicRequest","onMagicReward"+msg);
+                ToastUtils.showShort(msg);
+            }
+        });
+	
 ```
 参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId，对应字段释义如下，字段均必填 
 
@@ -51,36 +82,30 @@ MagicVideoView magicVideoView = new MagicVideoView(getApplication(),"userId","ap
 | slotId | Long | 广告位ID，通过TUIA媒体平台注册获得 |
 | userId | String | 媒体的用户ID，用于发送对应的奖励 |
 | deviceId | String | 媒体的用户deviceId，用于用户唯一性确认 |
+| MagicVideoListener |  | 广告回调监听 |
 
-2.初始化，设置媒体监听
+2.初始化(在Application初始onCreate方法中调用)
 ```
-              magicVideoView.init(new MagicVideoListener() {
 
-                    @Override
-                    public void onMagicRequestAd() {
-                        Log.d("onMagicRequest","onMagicRequestAd");
-                    }
+   MagicSDK.init(Application);
+       
+```
+3.请求广告,加载广告（默认回检测广告本地是否有缓存）
+```
 
-                    @Override
-                    public void onMagicAdSuccessed() {
-                        Log.d("onMagicRequest","onMagicAdSuccessed");
-                    }
-
-                    @Override
-                    public void onMagicAdEmpty() {
-                        Log.d("onMagicRequest","onMagicAdEmpty");
-                    }
-
-                    @Override
-                    public void onMagicAdFailed(Response<String> response) {
-                        Log.d("onMagicRequest","onMagicAdFailed"+response.body());
-                    }
-
-                    @Override
-                    public void onMagicRewarded(String msg) {
-                        Log.d("onMagicRequest","onMagicRewarded"+msg);
-                    }
-                });
+   方式一.缓存模式（先缓存,在需要的时候调用广告加载）
+  	1.请求广告
+   		magicVideoView.loadAd();
+        2.加载广告
+   		if (magicVideoView.checkLocalData()){
+       			magicVideoView.openNewVideoTask(MainActivity.this,false);
+   		}else {
+       			magicVideoView.openNewVideoTask(MainActivity.this,true);
+   		}
+   
+   方式二.在线模式(直接请求,加载广告)
+   		magicVideoView.openNewVideoTask(MainActivity.this,true);
+       
 ```
 3.返回奖励信息   在onMagicRewarded方法中会返回上报的奖励信息，JSON字符串如下
 ```
