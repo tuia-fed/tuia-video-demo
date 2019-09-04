@@ -34,9 +34,11 @@ app下的build.gradle添加：(最小支持minSdkVersion 15)
     }
 ```
 #### 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
+```
 
-   ` <uses-permission android:name="android.permission.INTERNET"/>`
-   
+  <uses-permission android:name="android.permission.INTERNET"/>
+
+```
 #### 三.使用
 1.创建MagicVideoView对象
 ```
