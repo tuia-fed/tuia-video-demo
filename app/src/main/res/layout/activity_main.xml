@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <Button
-        android:text="激励视频点击"
-        android:id="@+id/btn_video"
+        android:id="@+id/buttonVideo1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="激励混合广告测试-方式一对接（缓存模式）"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="76dp" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/buttonVideo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="激励混合广告测试-方式二对接（直接加载）"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+</LinearLayout>
