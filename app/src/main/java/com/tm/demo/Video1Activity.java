@@ -20,7 +20,7 @@ public class Video1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video1);
         magicVideoView =new MagicVideoView(MagicApp.getApp(),
-                "91200183954567","","2ZjLbhEBCFAzBbihEtxLEq25mXKw","301616",
+                "91200183954567","","2ZjLbhEBCFAzBbihEtxLEq25mXKw","300789",
                 CommonUtils.getPesudoDeviceId(Video1Activity.this),new MagicVideoListener() {
 
             @Override

@@ -21,7 +21,7 @@ public class Video2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final MagicVideoView magicVideoView =new MagicVideoView(MagicApp.getApp(),
-                        "91200183954567","","2ZjLbhEBCFAzBbihEtxLEq25mXKw","301616",
+                        "91200183954567","","2ZjLbhEBCFAzBbihEtxLEq25mXKw","300789",
                         CommonUtils.getPesudoDeviceId(Video2Activity.this),new MagicVideoListener() {
 
                     @Override
