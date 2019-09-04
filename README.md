@@ -140,13 +140,15 @@ app下的build.gradle添加：(最小支持minSdkVersion 15)
 
  4.在activity的onDestroy中处理
 ```
-              @Override
-              protected void onDestroy() {
-                     super.onDestroy();
-                     if (magicVideoView!=null){
-                             magicVideoView.destory();
-                     }
-              }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (magicVideoView!=null){
+           magicVideoView.destory();
+        }
+    }
+    
 ```    
 
 #### 四.发放奖励流程
