@@ -92,13 +92,16 @@ app下的build.gradle添加：(最小支持minSdkVersion 15)
    MagicSDK.init(Application);
        
 ```
-3.请求广告,加载广告（默认回检测广告本地是否有缓存）
+3.请求广告,加载广告(方式一和方式二任选一种)
 ```
 
    方式一.缓存模式（先缓存,在需要的时候调用广告加载）
   	1.请求广告
+	
    		magicVideoView.loadAd();
+		
         2.加载广告
+	
    		if (magicVideoView.checkLocalData()){
        			magicVideoView.openNewVideoTask(MainActivity.this,false);
    		}else {
@@ -106,6 +109,7 @@ app下的build.gradle添加：(最小支持minSdkVersion 15)
    		}
    
    方式二.在线模式(直接请求,加载广告)
+   
    		magicVideoView.openNewVideoTask(MainActivity.this,true);
        
 ```
