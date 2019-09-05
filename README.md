@@ -28,7 +28,7 @@
 app下的build.gradle添加：(最小支持minSdkVersion 15)
 ```
     dependencies {
-        implementation ('com.tuia:tm:1.0.0.0-release'){
+        implementation ('com.tuia:tm:1.0.0.1-release'){
                 transitive = true
         }
     }
