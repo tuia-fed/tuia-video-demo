@@ -1,9 +1,11 @@
 # 接入指南
 
 #### 一.依赖引入
-项目的build.gradle文件中添加
+方式一.Gradle依赖
 ```
-    buildscript {
+   1.目的build.gradle文件中添加
+
+   buildscript {
         repositories {
             google()
             jcenter()
@@ -23,15 +25,25 @@
             maven { url "https://dl.bintray.com/sunjiangrong/maven" }
         }
     }
-```
 
-app下的build.gradle添加：(最小支持minSdkVersion 15)
-```
-    dependencies {
+  2.app下的build.gradle添加：(最小支持minSdkVersion 15)
+
+  dependencies {
         implementation ('com.tuia:tm:1.0.0.1-release'){
                 transitive = true
         }
-    }
+   }
+```
+方式二.maven依赖
+```
+
+  <dependency>
+      <groupId>com.tuia</groupId>
+      <artifactId>tm</artifactId>
+      <version>1.0.0.1-release</version>
+      <type>pom</type>
+  </dependency>
+    
 ```
 #### 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
 ```
