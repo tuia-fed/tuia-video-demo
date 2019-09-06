@@ -11,17 +11,18 @@ import com.qs.magic.sdk.listener.MagicVideoListener;
 import com.qs.magic.sdk.util.CommonUtils;
 import com.qs.magic.sdk.view.MagicVideoView;
 
-public class Video1Activity extends AppCompatActivity {
+public class Reward1Activity extends AppCompatActivity {
 
     private MagicVideoView magicVideoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video1);
+        setContentView(R.layout.activity_reward);
+
         magicVideoView =new MagicVideoView(MagicApp.getApp(),
-                "91200183954567","","2AaKHTwmu8zCzVTUJJ6o5TNkHMDb","301616",
-                CommonUtils.getPesudoDeviceId(Video1Activity.this),new MagicVideoListener() {
+                "91200183954567","","2AaKHTwmu8zCzVTUJJ6o5TNkHMDb","307101",
+                CommonUtils.getPesudoDeviceId(Reward1Activity.this),new MagicVideoListener() {
 
             @Override
             public void onMagicRequestAd() {
@@ -67,21 +68,12 @@ public class Video1Activity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (magicVideoView.checkLocalData()){
-                    magicVideoView.openNewVideoTask(Video1Activity.this,false);
+                    magicVideoView.openNewVideoTask(Reward1Activity.this,false);
                 }else {
-                    magicVideoView.openNewVideoTask(Video1Activity.this,true);
+                    magicVideoView.openNewVideoTask(Reward1Activity.this,true);
                 }
 
             }
         });
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (magicVideoView!=null){
-            magicVideoView.destory();
-        }
     }
 }

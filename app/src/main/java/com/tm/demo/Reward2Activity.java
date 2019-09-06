@@ -11,18 +11,18 @@ import com.qs.magic.sdk.listener.MagicVideoListener;
 import com.qs.magic.sdk.util.CommonUtils;
 import com.qs.magic.sdk.view.MagicVideoView;
 
-public class Video2Activity extends AppCompatActivity {
+public class Reward2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video2);
+        setContentView(R.layout.activity_reward2);
         findViewById(R.id.ButtonLoad).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final MagicVideoView magicVideoView =new MagicVideoView(MagicApp.getApp(),
-                        "91200183954567","","2AaKHTwmu8zCzVTUJJ6o5TNkHMDb","301616",
-                        CommonUtils.getPesudoDeviceId(Video2Activity.this),new MagicVideoListener() {
+                        "91200183954567","","2AaKHTwmu8zCzVTUJJ6o5TNkHMDb","307101",
+                        CommonUtils.getPesudoDeviceId(Reward2Activity.this),new MagicVideoListener() {
 
                     @Override
                     public void onMagicRequestAd() {
@@ -55,7 +55,7 @@ public class Video2Activity extends AppCompatActivity {
                     }
 
                 });
-                magicVideoView.openNewVideoTask(Video2Activity.this,true);
+                magicVideoView.openNewVideoTask(Reward2Activity.this,true);
             }
         });
     }

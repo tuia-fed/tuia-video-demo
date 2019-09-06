@@ -15,7 +15,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:theme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,10 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Video1Activity" />
-
-        <activity android:name=".Video2Activity"/>
+        <activity android:name=".Video2Activity" />
+        <activity android:name=".Reward1Activity" />
+        <activity android:name=".Reward2Activity"></activity>
     </application>
 
 </manifest>

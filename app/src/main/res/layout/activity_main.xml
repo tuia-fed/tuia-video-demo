@@ -8,10 +8,27 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/buttonReward1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="激励互动广告测试-方式一对接（缓存模式）"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+
+    <Button
+        android:id="@+id/buttonReward2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="激励互动广告测试-方式一对接（缓存模式）"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="76dp" />
+
+    <Button
         android:id="@+id/buttonVideo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="激励混合广告测试-方式一对接（缓存模式）"
+        android:text="激励视频广告测试-方式一对接（缓存模式）"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="76dp" />
 
@@ -19,7 +36,7 @@
         android:id="@+id/buttonVideo2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="激励混合广告测试-方式二对接（直接加载）"
+        android:text="激励视频广告测试-方式二对接（直接加载）"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="76dp" />
 

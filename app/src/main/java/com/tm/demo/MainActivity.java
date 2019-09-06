@@ -19,6 +19,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.buttonReward1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Reward1Activity.class));
+            }
+        });
+
+        findViewById(R.id.buttonReward2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Reward2Activity.class));
+            }
+        });
+
         findViewById(R.id.buttonVideo1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
