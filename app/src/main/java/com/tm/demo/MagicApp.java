@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
+import com.facebook.stetho.Stetho;
 import com.qs.magic.sdk.MagicSDK;
 
 public class MagicApp extends Application {
@@ -19,6 +20,7 @@ public class MagicApp extends Application {
         super.onCreate();
         myApp = this;
         MagicSDK.init(this);
+        Stetho.initializeWithDefaults(this);
     }
 
 

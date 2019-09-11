@@ -1,11 +1,10 @@
 package com.tm.demo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.blankj.utilcode.util.ToastUtils;
 import com.lzy.okgo.model.Response;
 import com.qs.magic.sdk.listener.MagicVideoListener;
 import com.qs.magic.sdk.util.CommonUtils;
@@ -31,26 +30,22 @@ public class Video1Activity extends AppCompatActivity {
             @Override
             public void onMagicAdSuccessed() {
                 Log.d("onMagicRequest","onMagicAdSuccessed");
-                ToastUtils.showShort("广告请求成功");
 
             }
 
             @Override
             public void onMagicAdEmpty() {
                 Log.d("onMagicRequest","onMagicAdEmpty");
-                ToastUtils.showShort("暂时没有广告了");
             }
 
             @Override
             public void onMagicAdFailed(Response<String> response) {
                 Log.d("onMagicRequest","onMagicAdFailed"+response.body());
-                ToastUtils.showShort("广告请求失败");
             }
 
             @Override
             public void onMagicRewarded(String msg) {
                 Log.d("onMagicRequest","onMagicReward"+msg);
-                ToastUtils.showShort(msg);
             }
 
         });
