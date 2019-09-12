@@ -3,7 +3,7 @@
 #### 一.依赖引入
 方式一.Gradle依赖（推荐）
 ```
-   1.目的build.gradle文件中添加
+   1.在build.gradle文件中添加
 
    buildscript {
         repositories {
