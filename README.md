@@ -46,13 +46,9 @@
     
 ```
  方式三.aar引入(媒体特殊定制,不建议单独使用)
- ```
     Gson库比较通用需要单独引入
-    aar下载地址：
-    [奖励上报API对接文档]( https://yun.duiba.com.cn/magic/sdk/1.0.0.0/magic-sdk-1.0.0.0.aar) 
-   
- 
- ```
+    [aar下载地址](https://yun.duiba.com.cn/magic/sdk/1.0.0.0/magic-sdk-1.0.0.0.aar) 
+
 #### 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
 ```
 
