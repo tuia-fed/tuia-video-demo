@@ -45,8 +45,9 @@
   </dependency>
     
 ```
- 方式三.aar引入
+ 方式三.aar引入(媒体特殊定制,不建议单独使用)
  ```
+    Gson库比较通用需要单独引入
     aar下载地址：
     https://yun.duiba.com.cn/magic/sdk/1.0.0.0/magic-sdk-1.0.0.0.aar
  
