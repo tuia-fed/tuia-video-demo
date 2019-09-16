@@ -1,9 +1,9 @@
 # 接入指南
 
 #### 一.依赖引入
-方式一.Gradle依赖
+方式一.Gradle依赖（推荐）
 ```
-   1.目的build.gradle文件中添加
+   1.在build.gradle文件中添加
 
    buildscript {
         repositories {
@@ -45,6 +45,7 @@
   </dependency>
     
 ```
+
 #### 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
 ```
 
