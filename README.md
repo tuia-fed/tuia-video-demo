@@ -29,7 +29,7 @@
   2.app下的build.gradle添加：(最小支持minSdkVersion 15)
 
   dependencies {
-        implementation ('com.tuia:tm:1.1.0.0-release'){
+        implementation ('com.tuia:tm:1.2.0.0-release'){
                 transitive = true
         }
    }
@@ -40,14 +40,11 @@
   <dependency>
       <groupId>com.tuia</groupId>
       <artifactId>tm</artifactId>
-      <version>1.1.0.0-release</version>
+      <version>1.2.0.0-release</version>
       <type>pom</type>
   </dependency>
     
 ```
- 方式三.aar引入(媒体特殊定制,不建议单独使用，Gson库比较通用需要单独引入)
- 
-  [aar下载地址](https://yun.duiba.com.cn/magic/sdk/1.0.0.0/magic-sdk-1.0.0.0.aar) 
 
 #### 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
 ```
