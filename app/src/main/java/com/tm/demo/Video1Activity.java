@@ -48,6 +48,11 @@ public class Video1Activity extends AppCompatActivity {
                 Log.d("onMagicRequest","onMagicReward"+msg);
             }
 
+            @Override
+            public void onMagicAdClose() {
+                Log.d("onMagicRequest","onMagicAdClose");
+            }
+
         });
 
         findViewById(R.id.ButtonRequest).setOnClickListener(new View.OnClickListener() {

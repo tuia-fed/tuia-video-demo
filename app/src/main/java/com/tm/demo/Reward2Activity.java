@@ -49,6 +49,11 @@ public class Reward2Activity extends AppCompatActivity {
                         Log.d("onMagicRequest","onMagicReward"+msg);
                     }
 
+                    @Override
+                    public void onMagicAdClose() {
+                        Log.d("onMagicRequest","onMagicAdClose");
+                    }
+
                 });
                 magicVideoView.openNewVideoTask(Reward2Activity.this,true);
             }

@@ -19,8 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-#-------------------------------------------基本不用动区域--------------------------------------------
-#---------------------------------基本指令区----------------------------------
 -optimizationpasses 5       # 指定代码的压缩级别
 -dontusemixedcaseclassnames     # 是否使用大小写混合
 -dontskipnonpubliclibraryclasses        # 指定不去忽略非公共的库类
@@ -38,7 +36,6 @@
 -keep public class * extends android.app.Activity
 -keep public class * extends android.app.Application
 -keep public class * extends android.app.Service
-
 -keep public class * extends android.content.BroadcastReceiver
 -keep public class * extends android.content.ContentProvider
 -keep public class * extends android.app.backup.BackupAgentHelper
@@ -47,9 +44,6 @@
 -keep public class com.android.vending.licensing.ILicensingService
 -keep class android.support.** {*;}
 #-ignorewarnings -keep class * { public private *; }
--keep public class com.qs.magic.sdk.view.MagicBuoyView {
-    public <methods>;
-}
 
 #如果有引用v4包可以添加下面这行
 -keep class android.support.v4.** { *; }
@@ -118,46 +112,5 @@
 -dontwarn okio.**
 -dontwarn okhttp3.**
 
-#okhttp
--dontwarn okhttp3.**
--keep class okhttp3.**{*;}
-
-#okio
--dontwarn okio.**
--keep class okio.**{*;}
-
-#okgo
--dontwarn com.lzy.okgo.**
--keep class com.lzy.okgo.**{*;}
-
-#okrx
--dontwarn com.lzy.okrx.**
--keep class com.lzy.okrx.**{*;}
-
-#okrx2
--dontwarn com.lzy.okrx2.**
--keep class com.lzy.okrx2.**{*;}
-
-#okserver
--dontwarn com.lzy.okserver.**
--keep class com.lzy.okserver.**{*;}
-
- # okdownload:okhttp
- -keepnames class com.liulishuo.okdownload.core.connection.DownloadOkHttp3Connection
-
- # okdownload:sqlite
- -keep class com.liulishuo.okdownload.core.breakpoint.BreakpointStoreOnSQLite {
-         public com.liulishuo.okdownload.core.breakpoint.DownloadStore createRemitSelf();
-         public com.liulishuo.okdownload.core.breakpoint.BreakpointStoreOnSQLite(android.content.Context);
- }
-
 -dontwarn com.qs.magic.sdk.**
 -keep class com.qs.magic.sdk.**{ *;}
--keep public class * extends android.app.Activity
--keep public class com.qs.magic.sdk.MagicManager { *; }
--keep public class com.qs.magic.sdk.x5.jsbridge.ComWebjsSdk { *; }
--keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,Annotation,EnclosingMethod,MethodParameters
-
--keepclassmembers class fqcn.of.javascript.interface.for.webview {
-    public *;
- }
