@@ -25,7 +25,7 @@
         <activity android:name=".Video1Activity" />
         <activity android:name=".Video2Activity" />
         <activity android:name=".Reward1Activity" />
-        <activity android:name=".Reward2Activity"></activity>
+        <activity android:name=".Reward2Activity"/>
     </application>
 
 </manifest>

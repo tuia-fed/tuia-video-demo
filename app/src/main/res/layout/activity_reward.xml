@@ -8,13 +8,13 @@
 
     <Button
         android:id="@+id/ButtonRequest"
-        android:text="点击请求视频"
+        android:text="点击请求广告"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/ButtonLoad"
-        android:text="点击加载视频"
+        android:text="点击加载广告"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -35,6 +35,11 @@ public class Reward1Activity extends AppCompatActivity {
             }
 
             @Override
+            public void onMagicAdShow() {
+
+            }
+
+            @Override
             public void onMagicAdEmpty() {
                 Log.d("onMagicRequest","onMagicAdEmpty");
             }
