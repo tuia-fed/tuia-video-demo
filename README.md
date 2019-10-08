@@ -29,7 +29,7 @@
   2.app下的build.gradle添加：(最小支持minSdkVersion 15)
 
   dependencies {
-        implementation ('com.tuia:tm:1.2.0.0-release'){
+        implementation ('com.tuia:tm:1.2.2.2-release'){
                 transitive = true
         }
    }
@@ -40,55 +40,54 @@
   <dependency>
       <groupId>com.tuia</groupId>
       <artifactId>tm</artifactId>
-      <version>1.2.0.0-release</version>
+      <version>1.2.2.2-release</version>
       <type>pom</type>
   </dependency>
-    
+
 ```
 
 #### 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
 ```
-
   <uses-permission android:name="android.permission.INTERNET"/>
-
 ```
 #### 三.使用
-1.创建MagicVideoView对象
+1.初始化(在Application初始onCreate方法中调用,必须初始化不然会导致奔溃)
+
+```
+   MagicSDK.init(Application);
+
 ```
 
+2.创建MagicVideoView对象
+```
   MagicVideoView magicVideoView =new MagicVideoView(MagicApp.getApp(),
                 "userId","appId","appkey","slotId",
                 ”deviceId“,new MagicVideoListener() {
-
             @Override
             public void onMagicRequestAd() {
                 Log.d("onMagicRequest","onMagicRequestRewardVideo");
             }
-
             @Override
             public void onMagicAdSuccessed() {
                 Log.d("onMagicRequest","onMagicAdSuccessed");
             }
-
             @Override
             public void onMagicAdEmpty() {
                 Log.d("onMagicRequest","onMagicAdEmpty");
             }
-
             @Override
             public void onMagicAdFailed(Response<String> response) {
                 Log.d("onMagicRequest","onMagicAdFailed"+response.body());
             }
-
             @Override
             public void onMagicRewarded(String msg) {
                 Log.d("onMagicRequest","onMagicReward"+msg);
                 ToastUtils.showShort(msg);
             }
         });
-	
+
 ```
-参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId，对应字段释义如下，字段均必填 
+参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId，对应字段释义如下，字段均必填
 
 | 名称 | 类型 | 备注 |
 | :---------------------: | :---------------------: | :----------------------: |
@@ -99,32 +98,26 @@
 | deviceId | String | 媒体的用户deviceId，用于用户唯一性确认 |
 | MagicVideoListener |  | 广告回调监听 |
 
-2.初始化(在Application初始onCreate方法中调用)
-```
 
-   MagicSDK.init(Application);
-       
-```
 3.请求广告,加载广告(方式一和方式二任选一种)
 ```
-
    方式一.缓存模式（先缓存,在需要的时候调用广告加载）
   	1.请求广告
-	
+
    		magicVideoView.loadAd();
-		
+
         2.加载广告
-	
+
    		if (magicVideoView.checkLocalData()){
        			magicVideoView.openNewVideoTask(MainActivity.this,false);
    		}else {
        			magicVideoView.openNewVideoTask(MainActivity.this,true);
    		}
-   
+
    方式二.在线模式(直接请求,加载广告)
-   
+
    		magicVideoView.openNewVideoTask(MainActivity.this,true);
-       
+
 ```
 3.返回奖励信息   在onMagicRewarded方法中会返回上报的奖励信息，JSON字符串如下
 ```
@@ -139,7 +132,7 @@
 	"score" : null,
 	"reason" : "-1",
 	"url" : null
-} 
+}
 ```
 | 名称 | 类型 | 备注 |
 | :---------------------: | :---------------------: | :----------------------: |
@@ -153,7 +146,6 @@
 
  4.在activity的onDestroy中处理
 ```
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -9,6 +9,9 @@ import com.qs.magic.sdk.listener.MagicVideoListener;
 import com.qs.magic.sdk.util.CommonUtils;
 import com.qs.magic.sdk.view.MagicVideoView;
 
+/**
+ * 视频类广告直接加载模式
+ */
 public class Video2Activity extends AppCompatActivity {
 
     @Override
