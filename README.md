@@ -34,17 +34,6 @@
         }
    }
 ```
-方式二.maven依赖
-```
-
-  <dependency>
-      <groupId>com.tuia</groupId>
-      <artifactId>tm</artifactId>
-      <version>1.2.2.2-release</version>
-      <type>pom</type>
-  </dependency>
-
-```
 
 #### 二.权限(sdk内部已经处理相关权限问题，如果遇到冲突咨询对应开发即可)
 ```
@@ -119,7 +108,18 @@
    		magicVideoView.openNewVideoTask(MainActivity.this,true);
 
 ```
-3.返回奖励信息   在onMagicRewarded方法中会返回上报的奖励信息，JSON字符串如下
+4.在activity的onDestroy中处理
+```
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (magicVideoView!=null){
+           magicVideoView.destory();
+        }
+    }
+
+```
+5.返回奖励信息   在onMagicRewarded方法中会返回上报的奖励信息，JSON字符串如下
 ```
 {
 	"finishType" : 1,
@@ -144,17 +144,7 @@
 | sign | String | 签名 |
 | score | Number | 如果是数值类型的奖励，则同时请求充值对应的数值 score，比如积分、金币、倍数 |
 
- 4.在activity的onDestroy中处理
-```
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (magicVideoView!=null){
-           magicVideoView.destory();
-        }
-    }
-    
-```    
+
 
 #### 四.发放奖励流程
 ![Alt text](http://yun.tuisnake.com/docking_ducument/%E4%B8%8A%E6%8A%A5%E6%B5%81%E7%A8%8B.png)
@@ -166,11 +156,7 @@
 ``` 
 -dontwarn com.qs.magic.sdk.**
 -keep class com.qs.magic.sdk.**{ *;}
-``` 
-
-#### 六.对接问题
-
-  咨询对应开发或者直接git提交问题
+```
 
 
 
