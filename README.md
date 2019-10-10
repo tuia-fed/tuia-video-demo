@@ -29,7 +29,7 @@
   2.app下的build.gradle添加：(本SDK最低可运行于API Level 15，最高支持API Level 28)
 
   dependencies {
-        implementation ('com.tuia:tm:1.2.2.2-release'){
+        implementation ('com.tuia:tm:1.2.2.5-release'){
                 transitive = true
         }
    }
