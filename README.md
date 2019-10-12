@@ -40,7 +40,7 @@
   <uses-permission android:name="android.permission.INTERNET"/>
 ```
 #### 三.使用
-**==1.初始化(在Application初始onCreate方法中调用,必须初始化不然会导致奔溃)==**
+1.初始化(在Application初始onCreate方法中调用,必须初始化不然会导致奔溃)
 
 ```
    MagicSDK.init(Application);
@@ -134,7 +134,7 @@
    		}
 
 ```
-==**4.在合适时机销毁广告控件MagicVideoView,避免内存泄漏等**==
+4.在合适时机销毁广告控件MagicVideoView,避免内存泄漏等
 ```
     @Override
     protected void onDestroy() {
@@ -178,7 +178,7 @@
 如果，无法实现客户端上报逻辑则可以选择服务端上报流程，即由媒体服务端直接从推啊接收上报信息，为此须先对接
 [奖励上报API对接文档](http://yun.tuisnake.com/docking_ducument/%E5%A5%96%E5%8A%B1%E4%B8%8A%E6%8A%A5API%E5%AF%B9%E6%8E%A5%E6%96%87%E6%A1%A3.pdf) （注意：无论选择哪种上报方式，当对接方式为SDK时上述步骤都要完成以上步骤，同时 onMagicRewarded 方法都会上报信息）
 
-#### **==五.混淆==**
+#### 五.混淆
 
 ``` 
 -dontwarn com.qs.magic.sdk.**
