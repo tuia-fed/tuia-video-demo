@@ -12,6 +12,7 @@ import com.qs.magic.sdk.view.MagicVideoView;
 
 /**
  *  激励互动类广告直接加载模式介绍：
+ *  0.在Application中调用    MagicSDK.init(this); 先初始化SDk
  *  1.初始化广告控件magicVideoView ,不建议重复初始化
  *  2.缓存广告    magicVideoView.loadAd();
  *  3.加载广告
