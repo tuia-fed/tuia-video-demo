@@ -57,25 +57,43 @@
                    ”deviceId“,new MagicVideoListener() {
                @Override
                public void onMagicRequestAd() {
+                    //请求广告回调
                    Log.d("onMagicRequest","onMagicRequestRewardVideo");
                }
                @Override
                public void onMagicAdSuccessed() {
+                    //请求广告成功回调
                    Log.d("onMagicRequest","onMagicAdSuccessed");
                }
                @Override
                public void onMagicAdEmpty() {
+                   //请求广告为空回调
                    Log.d("onMagicRequest","onMagicAdEmpty");
                }
+               
                @Override
                public void onMagicAdFailed(Response<String> response) {
+                    //请求广告失败回调
                    Log.d("onMagicRequest","onMagicAdFailed"+response.body());
                }
+               
+               @Override
+               public void onMagicAdShow() {
+                    //广告展示回调
+                    Log.d("onMagicRequest","onMagicAdShow");
+               }
+               
                @Override
                public void onMagicRewarded(String msg) {
+                    //发放奖励回调   只有发奖的时候会回调
                    Log.d("onMagicRequest","onMagicReward"+msg);
-                   ToastUtils.showShort(msg);
                }
+               
+               @Override
+               public void onMagicAdClose(String s) {
+                    //广告关闭事件回调   s只有发奖的时候会回调参数，不发奖时回到为空字符串或null
+                    Log.d("onMagicRequest","onMagicAdClose"+s);
+                }
            });
    }
 
