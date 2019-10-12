@@ -10,7 +10,18 @@ import com.qs.magic.sdk.util.CommonUtils;
 import com.qs.magic.sdk.view.MagicVideoView;
 
 /**
- * 视频类广告直接加载模式
+ *  激励视频类广告直接加载模式介绍：
+ *  1.初始化广告控件magicVideoView ,不建议重复初始化
+ *  2.缓存广告    magicVideoView.loadAd();
+ *  3.加载广告
+ *           if (magicVideoView!=null){
+ *                     magicVideoView.openNewVideoTask(Video2Activity.this,true);
+ *           }
+ *
+ *  4.合适时机销毁广告控件magicVideoView，避免内存泄露或者其他问题
+ *          if (magicVideoView != null) {
+ *             magicVideoView.destory();
+ *         }
  */
 public class Video2Activity extends AppCompatActivity {
 
@@ -38,7 +49,7 @@ public class Video2Activity extends AppCompatActivity {
 
                     @Override
                     public void onMagicAdShow() {
-
+                        Log.d("onMagicRequest","onMagicAdShow");
                     }
 
                     @Override
@@ -57,8 +68,8 @@ public class Video2Activity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onMagicAdClose() {
-                        Log.d("onMagicRequest","onMagicAdClose");
+                    public void onMagicAdClose(String s) {
+                        Log.d("onMagicRequest","onMagicAdClose"+s);
                     }
 
                 });

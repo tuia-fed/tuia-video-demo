@@ -29,7 +29,7 @@
   2.app下的build.gradle添加：(本SDK最低可运行于API Level 15，最高支持API Level 28)
 
   dependencies {
-        implementation ('com.tuia:tm:1.2.2.5-release'){
+        implementation ('com.tuia:tm:1.2.2.6-release'){
                 transitive = true
         }
    }
@@ -49,31 +49,35 @@
 
 2.创建MagicVideoView对象
 ```
-  MagicVideoView magicVideoView =new MagicVideoView(MagicApp.getApp(),
-                "userId","appId","appkey","slotId",
-                ”deviceId“,new MagicVideoListener() {
-            @Override
-            public void onMagicRequestAd() {
-                Log.d("onMagicRequest","onMagicRequestRewardVideo");
-            }
-            @Override
-            public void onMagicAdSuccessed() {
-                Log.d("onMagicRequest","onMagicAdSuccessed");
-            }
-            @Override
-            public void onMagicAdEmpty() {
-                Log.d("onMagicRequest","onMagicAdEmpty");
-            }
-            @Override
-            public void onMagicAdFailed(Response<String> response) {
-                Log.d("onMagicRequest","onMagicAdFailed"+response.body());
-            }
-            @Override
-            public void onMagicRewarded(String msg) {
-                Log.d("onMagicRequest","onMagicReward"+msg);
-                ToastUtils.showShort(msg);
-            }
-        });
+   private MagicVideoView magicVideoView;
+   
+   if(magicVideoView == null){
+               magicVideoView =new MagicVideoView(MagicApp.getApp(),
+                   "userId","appId","appkey","slotId",
+                   ”deviceId“,new MagicVideoListener() {
+               @Override
+               public void onMagicRequestAd() {
+                   Log.d("onMagicRequest","onMagicRequestRewardVideo");
+               }
+               @Override
+               public void onMagicAdSuccessed() {
+                   Log.d("onMagicRequest","onMagicAdSuccessed");
+               }
+               @Override
+               public void onMagicAdEmpty() {
+                   Log.d("onMagicRequest","onMagicAdEmpty");
+               }
+               @Override
+               public void onMagicAdFailed(Response<String> response) {
+                   Log.d("onMagicRequest","onMagicAdFailed"+response.body());
+               }
+               @Override
+               public void onMagicRewarded(String msg) {
+                   Log.d("onMagicRequest","onMagicReward"+msg);
+                   ToastUtils.showShort(msg);
+               }
+           });
+   }
 
 ```
 参考demo中的MainActivity使用,替换对应申请的appId,appKey,slotId,userId，对应字段释义如下，字段均必填
@@ -92,23 +96,27 @@
 ```
    方式一.缓存模式（先缓存,在需要的时候调用广告加载）
   	1.请求广告
-
-   		magicVideoView.loadAd();
+        if(magicVideoView != null){
+   		    magicVideoView.loadAd();
+   		}
 
         2.加载广告
 
-   		if (magicVideoView.checkLocalData()){
-       			magicVideoView.openNewVideoTask(MainActivity.this,false);
-   		}else {
-       			magicVideoView.openNewVideoTask(MainActivity.this,true);
+        if(magicVideoView != null){
+   		    if (magicVideoView.checkLocalData()){
+       			    magicVideoView.openNewVideoTask(MainActivity.this,false);
+   		    }else {
+       			    magicVideoView.openNewVideoTask(MainActivity.this,true);
+   		    }
    		}
 
    方式二.在线模式(直接请求,加载广告)
-
-   		magicVideoView.openNewVideoTask(MainActivity.this,true);
+        if(magicVideoView != null){
+   		    magicVideoView.openNewVideoTask(MainActivity.this,true);
+   		}
 
 ```
-4.在activity的onDestroy中处理
+4.在合适时机销毁广告控件MagicVideoView,避免内存泄漏等
 ```
     @Override
     protected void onDestroy() {
