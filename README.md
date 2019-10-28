@@ -11,7 +11,7 @@ V1.2.2.8 | 20191021 | 1.优化发奖回调时机 2.禁用webview 缩放控制，
 
 ## 手动集成方式
 
-[手动集成方式点击查看](http://yun.duiba.com.cn/tuia/sdk/html/激励SDK对接文档-V1.2.2.8手动集成方式.html) 
+[手动集成方式点击查看](http://yun.duiba.com.cn/tuia/sdk/html/激励SDK-V1.2.2.8-手动集成方式.html) 
 
 ## 自动集成方式（推荐）
 #### 一.依赖引入
