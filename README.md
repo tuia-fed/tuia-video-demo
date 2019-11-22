@@ -116,10 +116,11 @@ V1.2.2.8 | 20191021 | 1.优化发奖回调时机 2.禁用webview 缩放控制,�
 
 | 名称 | 类型 | 备注 |
 | :---------------------: | :---------------------: | :----------------------: |
+
+| userId | String | 媒体的用户ID，用于发送对应的奖励 |
 | appId | Long | 推啊媒体ID，通过TUIA媒体平台注册获得 |
 | appKey | String | 媒体公钥，通过TUIA媒体平台注册获得 |
 | slotId | Long | 广告位ID，通过TUIA媒体平台注册获得 |
-| userId | String | 媒体的用户ID，用于发送对应的奖励 |
 | deviceId | String | 媒体的用户deviceId，用于用户唯一性确认 |
 | MagicVideoListener |  | 广告回调监听 |
 
